@@ -1,5 +1,9 @@
 from django.shortcuts import render
-from .models import Pessoa
+from .models import( 
+Pessoa, 
+Veiculo,
+MovRotativo
+)
 
 
 def home(request):
@@ -10,5 +14,17 @@ def home(request):
 def lista_pessoas(request):
     pessoas=Pessoa.objects.all()
     return render(request, 'core/lista_pessoa.html',{'pessoas':pessoas})
+
+def lista_veiculos(request):
+    veiculos=Veiculo.objects.all()
+    return render(request, 'core/lista_veiculos.html',{'veiculos':veiculos})
+
+
+def lista_mov_rotativos(request):
+    mov_rot=MovRotativo.objects.all()
+    return render(request, 'core/lista_movrotativos.html',{'mov_rot':mov_rot})
+
+
+
 
 # Create your views here.
