@@ -1,0 +1,6 @@
+<h2>Lista dos Mensalista</h2>
+<ul>
+{% for mensalista in mensalistas %}
+<li>{{mensalista.veiculo}} -- {{mensalista.inicio}}</li>
+{% endfor %}
+</ul>
