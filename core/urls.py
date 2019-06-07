@@ -6,14 +6,20 @@ from .views import (
     lista_movrotativos,
     lista_mensalista,
     lista_movmensalista,
-    pessoa_novo
+    pessoa_novo,
+    veiculo_novo,
+    movrotativos_novo,
+    mensalista_novo
 )
 
 urlpatterns = [
     url(r'^$', home, name='core_home'),
     url(r'^pessoas/$', lista_pessoas, name='core_lista_pessoas'),
-    url(r'^pessoas-novo/$', pessoa_novo, name='core_pessoa_novo'),
+    url(r'^pessoa-novo/$', pessoa_novo, name='core_pessoa_novo'),
+    url(r'^veiculo-novo/$', veiculo_novo, name='core_veiculo_novo'),
     url(r'^veiculos/$', lista_veiculos, name='core_lista_veiculos'),
+    url(r'^mov-rot-novo/$', movrotativos_novo, name='core_movrotativos_novo'),
+    url(r'^mensalista-novo/$', mensalista_novo, name='core_mensalista_novo'),
     url(r'^mov-rot/$', lista_movrotativos, 
         name='core_lista_movrotativos'),
     url(r'^mensalistas/$', lista_mensalista, 
