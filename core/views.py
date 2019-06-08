@@ -12,7 +12,8 @@ from .forms import (
         PessoaForm,
         VeiculoForm,
         MovRotativoForm,
-        MensalistaForm
+        MensalistaForm,
+        MovMensalistaForm
         )
 
 
@@ -80,5 +81,14 @@ def mensalista_novo(request):
 
 def lista_movmensalista(request):
     mov_mensalistas = MovMensalista.objects.all()
+    form=MovMensalistaForm()
+    data={'form': form, 'mov_mensalistas': mov_mensalistas}
     return render(
-        request, 'core/lista_movmensalistas.html', {'mov_mensalistas': mov_mensalistas})
+        request, 'core/lista_movmensalistas.html', data)
+
+
+def movmensalista_novo(request):
+        form = MovMensalistaForm(request.POST or None)
+        if form.is_valid():
+                form.save()
+        return redirect('core_lista_movmensalista')
