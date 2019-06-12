@@ -3,7 +3,7 @@
 {% load bootstrap3 %}
     
 <div class="row">
-        <div class="col-12">
+        <div class="col">
             <h2>Update Veiculos: {{veiculo}}</h2>
 
             <form action="{% url 'core_veiculo_update' veiculo.id %}" method="POST">
