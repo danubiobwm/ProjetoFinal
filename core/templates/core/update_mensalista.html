@@ -2,6 +2,8 @@
 {% block main %}
 {% load bootstrap3 %}
 
+<div class="row">
+        <div class="col-12">
     <h2>Update Mensalista: {{mensalista}}</h2>
 
 
@@ -14,5 +16,6 @@
         <button type="submit" class="btn btn-primary">Salvar</button>
         <a href="{% url 'core_mensalista_delete' mensalista.id %}" class="btn btn-danger">Delete</a>
     </form>
-
+        </div>
+</div>
 {% endblock %}
