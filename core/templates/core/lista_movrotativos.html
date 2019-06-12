@@ -41,7 +41,7 @@
     <form action="{% url 'core_movrotativos_novo' %}" method="POST">
         {% csrf_token %}
 
-        {{ form.as_p }}
+        {{ bootstrap_form }}
 
         <button type="submit">Cadastrar</button>
     </form>

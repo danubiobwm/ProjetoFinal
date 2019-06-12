@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load bootstrap3 %}
 {% block main %}
 <h2>Updating MovRotativo: {{ mov_rotativo }}</h2>
 
@@ -7,7 +7,7 @@
 <form action="{% url 'core_movrotativos_update' mov_rotativo.id %}" method="POST">
         {% csrf_token %}
     
-        {{ form.as_p }}
+        {{ bootstrap_form }}
     
         <button type="submit">Salvar</button>
 </form>
