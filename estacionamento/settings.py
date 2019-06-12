@@ -17,8 +17,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrapform',
     'core',
-    'bootstrap3',
+    'website',
 ]
 
 MIDDLEWARE = [
@@ -50,9 +51,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'estacionamento.wsgi.application'
-default_dburl= 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
-DATABASES = {
- 'default':config('DATABASE_URL', default = default_dburl, cast=dburl),
+
+default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+
+DATABASES = { 
+    'default': config('DATABASE_URL', default=default_dburl, cast=dburl), 
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -81,8 +84,13 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL  = 'core_home'
+LOGOUT_REDIRECT_URL = 'core_home'
